@@ -25,9 +25,22 @@ void Autonomous(){
   leftVic2.Set(0.5);
   rightVic1.Set(-0.5);
   rightVic2.Set(-0.5);
-  
   Wait(2.0);
-  
+  leftVic1.Set(0.5);
+  leftVic2.Set(0.5);
+  rightVic1.Set(-0.1);
+  rightVic2.Set(-0.1);
+  Wait(3.0);
+  leftVic1.Set(0.5);
+  leftVic2.Set(0.5);
+  rightVic1.Set(-0.5);
+  rightVic2.Set(-0.5);
+  wait(5.0)
+  leftVic1.Set(1);
+  leftVic2.Set(1);
+  rightVic1.Set(1);
+  rightVic2.Set(1);
+  wait(10)
   leftVic1.Set(0);
   leftVic2.Set(0);
   rightVic1.Set(0);
