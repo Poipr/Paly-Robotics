@@ -70,11 +70,14 @@ public:
   }
 
   void TeleopPeriod(){
-    
+    leftVic1.Set()
   }
 
   void TeleopDisabled(){
-    
+    leftVic1.Set(0.0);
+    leftVic2.Set(0.0);
+    rightVic1.Set(0.0);
+    rightVic2.Set(0.0);
   }
 };
 
