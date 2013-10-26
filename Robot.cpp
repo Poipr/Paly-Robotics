@@ -34,7 +34,7 @@ public:
     t.Start();
   }
 
-  void AutonomousPeriod(){
+  void AutonomousPeriodic(){
     if (t.Get() < 2.0){
     leftVic1.Set(0.5);
     leftVic2.Set(0.5);
@@ -69,7 +69,7 @@ public:
     
   }
 
-  void TeleopPeriod(){
+  void TeleopPeriodic(){
     leftVic1.Set(speedStick.GetX()-turnStick.GetY());
     leftVic2.Set(speedStick.GetX()-turnStick.GetY());
     rightVic1.Set(turnStick.GetY()-speedStick.GetX());
