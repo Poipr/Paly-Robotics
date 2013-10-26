@@ -70,7 +70,10 @@ public:
   }
 
   void TeleopPeriod(){
-    leftVic1.Set()
+    leftVic1.Set(speedStick.GetX()-turnStick.GetY());
+    leftVic2.Set(speedStick.GetX()-turnStick.GetY());
+    rightVic1.Set(turnStick.GetY()-speedStick.GetX());
+    rightVic2.Set(turnStick.GetY()-speedStick.GetX());
   }
 
   void TeleopDisabled(){
