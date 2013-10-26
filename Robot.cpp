@@ -3,7 +3,7 @@
 #define PORT_DRIVE_VIC_2 10
 #define PORT_DRIVE_VIC_3 2
 #define PORT_DRIVE_VIC_4 1
-#define PORT_JS_DRIVE 1
+#define PORT_JS_SPEED 1
 #define PORT_JS_TURN 2
 #define PORT_JS_OPERATOR 3
 
