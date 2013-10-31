@@ -79,10 +79,10 @@ public:
   }
 
   void TeleopPeriodic(){
-    leftVic1.Set(speedStick.GetX()-turnStick.GetY());
-    leftVic2.Set(speedStick.GetX()-turnStick.GetY());
-    rightVic1.Set(turnStick.GetY()-speedStick.GetX());
-    rightVic2.Set(turnStick.GetY()-speedStick.GetX());
+    leftVic1.Set(speedStick.GetY()-turnStick.GetX());
+    leftVic2.Set(speedStick.GetY()-turnStick.GetX());
+    rightVic1.Set(turnStick.GetX()-speedStick.GetY());
+    rightVic2.Set(turnStick.GetX()-speedStick.GetY());
     
     if (shooterState == IDLE){
       
