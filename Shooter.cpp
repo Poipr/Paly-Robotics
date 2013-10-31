@@ -6,6 +6,15 @@
 #define PORT_JS_SPEED 1
 #define PORT_JS_TURN 2
 #define PORT_JS_OPERATOR 3
+#define PORT_SHOOTER_1 3
+#define PORT_SHOOTER_2 4
+
+enum {
+  IDLE,
+  SPIN_UP,
+  EXTENDING,
+  RECEDING
+} shooterState;
 
 class MyRobot : public IterativeRobot {
   Victor leftVic1;
@@ -74,6 +83,19 @@ public:
     leftVic2.Set(speedStick.GetX()-turnStick.GetY());
     rightVic1.Set(turnStick.GetY()-speedStick.GetX());
     rightVic2.Set(turnStick.GetY()-speedStick.GetX());
+    
+    if (shooterState == IDLE){
+      
+    }
+    else if (shooterState == SPIN_UP){
+      
+    }
+    else if (shooterState == EXTENDING){
+      
+    }
+    else if (shooterState == RECEDING){
+      
+    }
   }
 
   void TeleopDisabled(){
