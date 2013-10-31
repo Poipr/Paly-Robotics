@@ -9,18 +9,20 @@
 #define PORT_SHOOTER_1 3
 #define PORT_SHOOTER_2 4
 
-enum {
+enum shooterState {
   IDLE,
   SPIN_UP,
   EXTENDING,
   RECEDING
-} shooterState;
+};
 
 class MyRobot : public IterativeRobot {
   Victor leftVic1;
   Victor leftVic2;
   Victor rightVic1;
   Victor rightVic2;
+  Victor shooter1;
+  Victor shooter2;
   Joystick speedStick;
   Joystick turnStick;
   Joystick operatorStick;
@@ -32,6 +34,8 @@ public:
     leftVic2(PORT_DRIVE_VIC_2),
     rightVic1(PORT_DRIVE_VIC_3),
     rightVic2(PORT_DRIVE_VIC_4),
+    shooter1(PORT_SHOOTER_1),
+    shooter2(PORT_SHOOTER_2),
     speedStick(PORT_JS_SPEED),
     turnStick(PORT_JS_TURN),
     operatorStick(PORT_JS_OPERATOR)
@@ -85,18 +89,28 @@ public:
     rightVic2.Set(turnStick.GetX()-speedStick.GetY());
     
     if (shooterState == IDLE){
-      
+      if (/*Sense if the trigger is pressed*/) {
+        shooterState = SPIN_UP;
+      }
     }
     else if (shooterState == SPIN_UP){
-      
+      // Spin the motors up to speed
+      if (/*Do something to decide when to go to the Extending state*/) {
+        shooterState = EXTENDING;
+      }
     }
     else if (shooterState == EXTENDING){
-      
+      // Extend the Solenoid
+      if (/*Sense when the solenoid is done extending*/) {
+        shooterState = RECEDING;
+      }
     }
     else if (shooterState == RECEDING){
-      
+      // Pull back the solenoid
+      if (/*Sense when the solenoid is done being pulled back*/) {
+        shooterState = IDLE;
+      }
     }
-  }
 
   void TeleopDisabled(){
     leftVic1.Set(0.0);
